@@ -14,33 +14,44 @@ namespace Routes.Models
 
         public IEnumerable<Notice> AllNotices()
         {
-            var return = new Collection<Notice>
+            var ret = new Collection<Notice>
             {
                 new Notice
                 {
                     NoticeId=1,
-                    Category="Soccer",
+                    Category="Sport",
                     Title="Soccer game",
                     Content="Notice about soccer games!",
-                    Date=new Datetime(2018,3,5),
+                    Date=new DateTime(2018,3,5),
                 },
                 new Notice
                 {
                     NoticeId=2,
-                    Category="Basketball",
+                    Category="Sport",
                     Title="Basketball game",
                     Content="Notice about Basktetball games!",
-                    Date=new Datetime(2018,3,5),
+                    Date=new DateTime(2018,3,5),
                 },
                 new Notice
                 {
                     NoticeId=3,
-                    Category="Volleyball",
+                    Category="Sport",
                     Title="Volleyball game",
                     Content="Notice about Volleyball games!",
-                    Date=new Datetime(2018,3,5),
+                    Date=new DateTime(2018,3,1),
                 },
-            }
+                new Notice
+                {
+                    NoticeId=4,
+                    Category="Sport",
+                    Title="Golf game",
+                    Content="Notice about golf games!",
+                    Date=new DateTime(2018,3,2),
+                }
+            };
+
+            return ret;
+
         }
     }
 }
