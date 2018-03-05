@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Routes.Models.Notice>
+
+@{
+    ViewBag.Title = "Category";
+}
+
+<!--new title category-->
+<h2>Category: @ViewBag.Category</h2>
+
+<div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.ActionLink(item.Title, "ShowNews", "Home", new
+                {
+                    @noticeId = item.NoticeId,
+                    @category = item.Category.ToLower(),
+                    @title = item.Title.ToLower()
+                }, null);
+
+                <em>
+                    @Html.DisplayFor(modelIem => item.Category)
+                </em>
+
+                <b>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </b>
+
+            </li>
+        }
+    </ul>
+</div>
+

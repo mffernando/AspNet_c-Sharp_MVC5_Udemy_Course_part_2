@@ -8,14 +8,32 @@
 
 <div>
     <ul>
+        <!--ViewBag.Categories = allCategories in HomeController.cs
+            show categories-->
+        @foreach (string item in ViewBag.Categories)
+    {
+            <li>
+                @Html.ActionLink(item, "ShowCategory", "Home", new
+           {
+               @category = item
+           }, null);
+            </li>
+
+    }
+    </ul>
+</div>
+
+<div>
+    <ul>
         @foreach(var item in Model)
         {
             <li>
-                @Html.ActionLink(item.Title, "ShowNotice", "Home", new {
-                @noticeId = item.NoticeId,
-                @category = item.Category.ToLower(),
-                @title = item.Title.ToLower()
-                }, null);
+                @Html.ActionLink(item.Title, "ShowNews", "Home", new
+           {
+               @noticeId = item.NoticeId,
+               @category = item.Category.ToLower(),
+               @title = item.Title.ToLower()
+           }, null);
 
                 <em>
                     @Html.DisplayFor(modelIem => item.Category)
@@ -28,4 +46,8 @@
             </li>
         }
     </ul>
+</div>
+
+<div>
+    @Html.ActionLink("News", "News", "Home")
 </div>

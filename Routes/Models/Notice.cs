@@ -47,6 +47,14 @@ namespace Routes.Models
                     Title="Golf game",
                     Content="Notice about golf games!",
                     Date=new DateTime(2018,3,2),
+                },
+                new Notice
+                {
+                    NoticeId=4,
+                    Category="Technology",
+                    Title="Smartphone",
+                    Content="Notice about Smartphones!",
+                    Date=new DateTime(2018,3,5),
                 }
             };
 

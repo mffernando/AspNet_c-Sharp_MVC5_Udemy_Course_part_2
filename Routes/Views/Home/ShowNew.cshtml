@@ -1,0 +1,19 @@
+﻿@model Routes.Models.Notice
+
+@{
+    ViewBag.Title = "Show News";
+}
+
+<!--new title-->
+<h2>@Model.Title</h2>
+
+<em>
+    @Model.Date - @Html.ActionLink(@Model.Category, "ShowCategory", "Home", new
+    {
+        @category = Model.Category
+    }, null)
+</em>
+
+<div>
+    @Model.Content
+</div>

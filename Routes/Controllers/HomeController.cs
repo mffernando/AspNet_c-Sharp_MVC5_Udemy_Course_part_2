@@ -43,5 +43,24 @@ namespace Routes.Controllers
 
             return View();
         }
+
+        public ActionResult News()
+        {
+            return View(allNotices);
+        }
+
+        public ActionResult ShowNew(int noticeId, string title, string category)
+        {
+            //return a new by id
+            return View(allNotices.FirstOrDefault(x => x.NoticeId == noticeId));
+        }
+
+        public ActionResult ShowCategory(string category)
+        {
+            var SpecificCategory = allNotices.Where(x => x.Category.ToLower() == category.ToLower()).ToList();
+            ViewBag.Category = category;
+            return View(SpecificCategory);
+        }
+
     }
 }
